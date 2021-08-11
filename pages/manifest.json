@@ -1,0 +1,72 @@
+{
+  "timelines": [
+    {
+      "tools": [
+        "nodejs",
+        "vue",
+        "graphql",
+        "mongodb"
+      ],
+      "from_year": 2019,
+      "from_month": 7,
+      "to_year": 2019,
+      "to_month": 8,
+      "company": "Robot Galaxy Kids",
+      "desc": "I worked as Full stack developer. Build the CMS for Galaxy Academy System. Galaxy Academy is  management system for E-Learning platform for child the age of 10. I developed the system by used VueJs as UI and used Nodejs for developed API. I used Graphql for provide request from The system and UI for management the content"
+    },
+    {
+      "tools": [
+        "Nodejs",
+        "Oracle Database"
+      ],
+      "from_year": 2019,
+      "from_month": 8,
+      "to_year": 2020,
+      "to_month": 3,
+      "company": "Pandasoft & Development",
+      "desc": "I maintain and developed API that comunicate NDID for EKYC flow to open bank account without going to the branch. NDID is Blockchain system for store customer data from many reliable provider including commercial banks in Thailand and government agencies"
+    },
+    {
+      "tools": [
+        "nodejs",
+        "react",
+        "postgreSQL"
+      ],
+      "from_year": 2020,
+      "from_month": 4,
+      "to_year": 2021,
+      "to_month": 4,
+      "company": "Baania",
+      "desc": "I developed frontend and api for real estate appraisal system. used React for build frontend and nodejs for build the api. By obtaining real estate data that collect by Krungsri bank"
+    }
+  ],
+  "apps": [
+    {
+      "name": "My English Hour",
+      "desc": "This App build for teach english language to  students at University. This App has to many excersice and question.",
+      "images": [
+        "images/myEng-1.png",
+        "images/myEng-2.png",
+        "images/myEng-3.png"
+      ]
+    },
+    {
+      "name": "SunRoof",
+      "desc": "A social network app for night club in Korat at Thailand. Like Instragram build from React-Native",
+      "images": [
+        "images/sun-1.webp",
+        "images/sun-2.webp",
+        "images/sun-3.webp"
+      ]
+    },
+    {
+      "name": "Phamarcy GURU",
+      "desc": "A Web Application for Register Phamarcy Course",
+      "images": [
+        "images/pham-1.png",
+        "images/pham-2.png",
+        "images/pham-3.png"
+      ]
+    }
+  ]
+}
