@@ -1,16 +1,23 @@
 {
   "name": "winter-wub",
+  "main": "server.js",
+  "engines": {
+    "node": "14"
+  },
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "clean": "rimraf nextjs/",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "export": "next export"
+    "predeploy": "npm run clean && next build",
+    "deploy": "firebase deploy --only functions:nextjs,hosting"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
+    "firebase-admin": "^9.11.0",
+    "firebase-functions": "^3.15.2",
     "lodash": "^4.17.21",
     "next": "11.0.1",
     "next-themes": "^0.0.15",
@@ -29,8 +36,11 @@
     "eslint": "7.32.0",
     "eslint-config-next": "11.0.1",
     "eslint-config-prettier": "^8.3.0",
+    "firebase-functions-test": "^0.3.1",
     "postcss": "^8.3.6",
     "prettier": "^2.3.2",
+    "rimraf": "^3.0.2",
+    "shelljs": "^0.8.4",
     "tailwindcss": "^2.2.7",
     "typescript": "4.3.5"
   }
