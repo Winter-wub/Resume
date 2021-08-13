@@ -4,30 +4,33 @@ import manifest from "./manifest.json";
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
 import { FiMail, FiPhoneCall } from "react-icons/fi";
-import { FaFacebook, FaLinkedin } from "react-icons/fa";
+import { FaAndroid, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
+import { GrAppleAppStore } from "react-icons/gr";
+import { GiWorld } from "react-icons/gi";
+import meImage from '../public/images/me.png'
 
 const Index = () => {
 	return (
 		<DefaultLayout>
-			<div className="flex w-full container mx-auto md:p-20">
-				<div className="w-full p-10 bg-black md:bg-white md:w-1/2">
+			<section id="home" className="flex w-full container mx-auto md:p-20">
+				<div className="w-full p-10 bg-black md:bg-white md:w-auto">
 					<div className="font-extrabold md:text-5xl text-3xl mb-10 text-white md:text-black">
-						<span
-							className="bg-gradient-to-r from-indigo-400 to-indigo-700 text-transparent bg-clip-text">Turn</span> your <span
+						<span className="bg-gradient-to-r from-indigo-400 to-indigo-700 text-transparent bg-clip-text">
+							Turn</span> your <span
 						className="text-indigo-600">idea</span> into <span
 						className="bg-gradient-to-r from-red-300 to-red-800 text-transparent bg-clip-text">reality!</span>
 					</div>
 					<div className="text-gray-500 mb-10">
 						From bainstroming to launch, i will help you build a beautiful, inntuitive app that will wow your customers
 					</div>
-					<a className="rounded-xl text-white bg-indigo-600 p-3 shadow uppercase">
+					<a className="rounded-xl text-white bg-indigo-600 p-3 shadow uppercase" href="#contact">
 						Request a quote
 					</a>
 				</div>
-				<div className="w-0 md:w-1/2 bg-indigo-600 rounded-2xl">
-
+				<div className="w-0 md:w-1/2 lg:w-1/3 flex items-center justify-center bg-gradient-to-bl from-indigo-700 to-red-200 rounded-3xl">
+						<Image src={meImage} className="h-full w-full opacity-70" alt="PrachayawutSirisuth"   />
 				</div>
-			</div>
+			</section>
 			<div className="bg-gray-900 p-1 text-white py-10 px-12">
 				<div className="text-center uppercase font-bold mb-5 text-sm">Work Experience</div>
 				<div className="relative container mx-auto">
@@ -52,7 +55,11 @@ const Index = () => {
 												<p className="text-sm text-gray-900 text-opacity-100">
 													{item.desc}
 												</p>
+												<div className="p-1 md:hidden">
+													{item.from_month}/{item.from_year} - {item.to_month}/{item.to_year}
+												</div>
 											</div>
+
 										</div>
 									))
 								}
@@ -61,7 +68,7 @@ const Index = () => {
 					}
 				</div>
 			</div>
-			<div className="p-1 bg-white flex flex-col items-center container mx-auto">
+			<section id="projects" className="p-1 bg-white flex flex-col items-center container mx-auto">
 				<h2 className="uppercase font-extrabold my-5">Freelance Projects</h2>
 				<h3 className="md:text-5xl text-3xl mb-5">2 years of app <div
 					className="bg-gradient-to-r from-indigo-700 to-red-500 text-transparent bg-clip-text">development</div></h3>
@@ -77,7 +84,7 @@ const Index = () => {
 							key={id}
 						>
 							<div className="order-1 md:w-1/2 w-full">
-								<Carousel autoPlay infiniteLoop interval={3000} showIndicators={false}>
+								<Carousel autoPlay infiniteLoop interval={3000} showIndicators={false} showThumbs={false}>
 									{
 										item.images.map((image, id) => {
 											const Img = require(`../public/${image}`);
@@ -96,16 +103,32 @@ const Index = () => {
 							<div className="order-1 md:w-1/2 w-full p-2">
 								<h1 className="text-xl mb-5 font-bold uppercase">{item.name}</h1>
 								<p className="text-gray-500 mb-3">{item.desc}</p>
-								<a className="underline">View Project</a>
+								<div className="flex">
+									{
+										item?.android && <a href={item.android} target="_blank" rel="noreferrer"
+										                    className="m-2 text-indigo-600 text-sm flex items-center flex-col"> <FaAndroid
+											size={25} /> Google Play </a>
+									}
+									{
+										item?.ios && <a href={item.ios} target="_blank" rel="noreferrer"
+										                className="m-2 text-indigo-600 text-sm flex items-center flex-col"> <GrAppleAppStore
+											size={25} /> App Store </a>
+									}
+									{
+										item?.web && <a href={item.web} target="_blank" rel="noreferrer"
+										                className="m-2 text-indigo-600 text-sm flex items-center flex-col"> <GiWorld
+											size={25} /> WebApp </a>
+									}
+								</div>
 							</div>
 						</div>
 					))
 				}
-			</div>
-			<div className="bg-gray-900 text-white">
-				<div className="container mx-auto p-10">
-					<h2 className="text-center uppercase font-bold mb-5 text-sm">Why me</h2>
-					<div className="grid grid-flow-col grid-cols-3 grid-rows-2 gap-4">
+			</section>
+			<section id="whyme" className="bg-gray-900 text-white">
+				<div className="container mx-auto pb-36">
+					<h2 className="text-center uppercase font-bold mb-5 text-sm pt-20">Why me</h2>
+					<div className="grid grid-flow-col grid-cols-3 grid-rows-2 gap-4 p-20">
 						<div>
 							<h4 className="mb-3">Experience</h4>
 							<p className="text-gray-400">
@@ -148,57 +171,61 @@ const Index = () => {
 						</div>
 					</div>
 				</div>
-			</div>
-			<div className="bg-white text-black p-1">
-				<div className="container mx-auto">
-					<h2 className="text-center uppercase font-bold mb-5 text-sm my-8">Let&apos;s make something awesome
+			</section>
+			<section id="contact" className="bg-white text-black p-1">
+				<div className="container mx-auto md:p-20">
+					<h2 className="text-center uppercase font-bold mb-20 text-sm my-8">Let&apos;s make something awesome
 						together</h2>
 					<div className="flex flex-col md:flex-row items-center justify-between">
-						<div className="mb-5">
+						<div className="mb-5 rounded-2xl p-10 bg-black text-white shadow-xl">
 							<div className="text-5xl font-bold mb-8">Request a <span
 								className="bg-gradient-to-r from-red-500 to-indigo-800 text-transparent bg-clip-text">quote</span></div>
-							<div className="h-14 w-full border-2 rounded border-indigo-700 mb-5">
-								<input className="w-full h-full pl-5" placeholder="Name" />
+							<div className="h-14 w-full border-4 rounded border-indigo-700 mb-5">
+								<input className="w-full h-full pl-5 text-black" placeholder="Name" />
 							</div>
-							<div className="h-14 w-full border-2 rounded border-indigo-700 mb-5">
-								<input className="w-full h-full pl-5" placeholder="Email" />
+							<div className="h-14 w-full border-4 rounded border-indigo-700 mb-5">
+								<input className="w-full h-full pl-5 text-black" placeholder="Email" />
 							</div>
-							<div className="h-48 w-full border-2 rounded border-indigo-700 mb-10">
-								<textarea className="w-full h-full pl-5 pt-5" placeholder="Project details" />
+							<div className="h-48 w-full border-4 rounded border-indigo-700 mb-10">
+								<textarea className="w-full h-full pl-5 pt-5 text-black" placeholder="Project details" />
 							</div>
 							<button className="bg-indigo-700 text-white p-5 rounded uppercase font-bold">Let&apos;s Kick off this
 								project
 							</button>
 						</div>
-						<div className="mb-5">
-							<div className="text-5xl font-bold mb-8">Contacts</div>
+						<div className="mb-5 p-10">
+							<div className="text-5xl font-bold mb-10">Contacts</div>
 							<div className="flex items-center mb-5">
 								<FiMail className="mr-5" />
 								<a href="mailto:prachayawut.s@gmail.com">
-									Prachayawut.s@gmail.com
+									prachayawut.s@gmail.com
 								</a>
 							</div>
 							<div className="flex items-center mb-8">
 								<FiPhoneCall className="mr-5" />
-								<a href="call:+66942519182">
+								<a href="tel:+66942519182">
 									+66942519182
 								</a>
 							</div>
 							<div className="">
 								<div className="mb-3">Follow</div>
 								<div className="flex">
-									<a className="mr-3">
+									<a href="https://facebook.com/waveblur" target="_blank" rel="noreferrer" className="mr-3">
 										<FaFacebook size={35} />
 									</a>
-									<a className="mr-3">
+									<a href="https://www.linkedin.com/in/prachayawut-sirisuth-4a690018b/" target="_blank" rel="noreferrer"
+									   className="mr-3">
 										<FaLinkedin size={35} />
+									</a>
+									<a href="https://github.com/Winter-wub" target="_blank" rel="noreferrer">
+										<FaGithub size={35} />
 									</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</section>
 		</DefaultLayout>
 	);
 };

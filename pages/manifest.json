@@ -48,7 +48,8 @@
         "images/myEng-1.png",
         "images/myEng-2.png",
         "images/myEng-3.png"
-      ]
+      ],
+      "ios": "https://apps.apple.com/us/app/my-english-hour/id1537239956"
     },
     {
       "name": "SunRoof",
@@ -57,7 +58,9 @@
         "images/sun-1.webp",
         "images/sun-2.webp",
         "images/sun-3.webp"
-      ]
+      ],
+      "android": "https://play.google.com/store/apps/details?id=com.sunroof.alzocial",
+      "ios": "https://apps.apple.com/us/app/sunroof/id1545831603"
     },
     {
       "name": "Phamarcy GURU",
@@ -66,7 +69,8 @@
         "images/pham-1.png",
         "images/pham-2.png",
         "images/pham-3.png"
-      ]
+      ],
+      "web": "https://pharmacyguru.net"
     }
   ]
 }

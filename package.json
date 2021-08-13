@@ -10,17 +10,21 @@
     "export": "next export"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "lodash": "^4.17.21",
     "next": "11.0.1",
+    "next-themes": "^0.0.15",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
     "react-responsive-carousel": "^3.2.20",
+    "react-scrollspy": "^3.4.3",
     "sass": "^1.37.5"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.172",
     "@types/react": "17.0.16",
+    "@types/react-scrollspy": "^3.3.4",
     "autoprefixer": "^10.3.1",
     "eslint": "7.32.0",
     "eslint-config-next": "11.0.1",
