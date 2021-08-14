@@ -27,12 +27,15 @@ const DefaultLayout: React.FC = ({ children }) => {
 	const [colorTheme, setTheme] = useDarkMode();
 
 	const togglerTheme = (
-		<div className="mr-auto md:ml-5 flex items-center justify-center">
+		<div className="md:ml-5 flex items-center justify-center mr-2">
 			{colorTheme === "light" ? (
-				<svg
+				<button
+					className="p-2 bg-indigo-700 rounded-full text-white"
 					onClick={() => setTheme("light")}
+				>
+				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					className="h-6 w-6 text-white cursor-pointer"
+					className="h-6 w-6"
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke="currentColor"
@@ -44,11 +47,15 @@ const DefaultLayout: React.FC = ({ children }) => {
 						d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
 					/>
 				</svg>
+				</button>
 			) : (
-				<svg
+				<button
+					className="p-2 bg-gradient-to-r from-indigo-700 to-blue-600 rounded-full text-white"
 					onClick={() => setTheme("dark")}
+				>
+				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					className="h-6 w-6 text-black cursor-pointer"
+					className="h-6 w-6"
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke="currentColor"
@@ -60,6 +67,7 @@ const DefaultLayout: React.FC = ({ children }) => {
 						d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
 					/>
 				</svg>
+				</button>
 			)}
 		</div>
 	);
@@ -72,12 +80,17 @@ const DefaultLayout: React.FC = ({ children }) => {
 			<div className="relative bg-gray-50 dark:bg-black">
 				<div className="z-40 fixed top-0 w-full ">
 					<div className="flex bg-gray-50 dark:bg-black  shadow-xl">
+						<div className="flex md:hidden items-center ml-2">
+							<button className="rounded border p-2 dark:text-white text-black"
+							        onClick={() => setToggleCollapse(!toggleCollapse)}>
+								<BsList />
+							</button>
+						</div>
 						<Link href="/">
-							<a className="font-bold md:text-2xl p-5 uppercase text-black dark:text-white">
+							<a className="font-bold md:text-2xl p-5 uppercase text-black dark:text-white mr-auto">
 								{manifest.brand}
 							</a>
 						</Link>
-						{togglerTheme}
 						<Scrollspy items={["home", "projects", "whyme", "contact"]}
 						           className="items-center justify-center hidden md:flex bg-gray-50 dark:bg-black"
 						           currentClassName="text-indigo-800 border-t-4 border-indigo-800">
@@ -92,12 +105,8 @@ const DefaultLayout: React.FC = ({ children }) => {
 								))
 							}
 						</Scrollspy>
-						<div className="flex md:hidden items-center mr-2">
-							<button className="rounded border p-2 dark:text-white text-black"
-							        onClick={() => setToggleCollapse(!toggleCollapse)}>
-								<BsList />
-							</button>
-						</div>
+
+						{togglerTheme}
 					</div>
 					{
 						toggleCollapse && (

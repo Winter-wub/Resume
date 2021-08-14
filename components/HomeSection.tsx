@@ -3,6 +3,8 @@ import meImage from "../public/images/me.png";
 import { VFC, Fragment } from "react";
 import { chunk } from "lodash";
 import manifest from "../pages/manifest.json";
+import styles from '../styles/HomeSection.module.scss'
+import cx from 'classnames'
 
 export const HomeSection: VFC = () => {
 	return (
@@ -23,7 +25,7 @@ export const HomeSection: VFC = () => {
 				</a>
 			</div>
 			<div className="w-0 md:w-1/2 lg:w-1/3 flex items-center justify-center animate__animated animate__backInRight animate__delay-1s">
-				<Image src={meImage} className="h-full w-full bg-gradient-to-bl from-indigo-700 to-red-200 rounded-3xl" alt="PrachayawutSirisuth"   />
+				<Image src={meImage} className={cx("h-full w-full bg-gradient-to-bl from-indigo-700 to-red-200", styles.meFrame)} alt="PrachayawutSirisuth"   />
 			</div>
 		</section>
 			<div className="bg-gray-900 p-1 text-white py-10 px-12">
