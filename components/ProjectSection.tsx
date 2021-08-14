@@ -14,7 +14,7 @@ export const ProjectSection: VFC = () => {
 	useScrollTriggerClassName(section2Ref, ['animate__animated', 'animate__fadeInLeft'])
 
 	return (
-		<section id="projects" className="p-1 bg-white dark:bg-black flex flex-col items-center container mx-auto">
+		<section id="projects" className="p-1 bg-gray-50 dark:bg-black flex flex-col items-center container mx-auto">
 			<h2 className="uppercase font-extrabold my-5 text-black dark:text-white">Freelance Projects</h2>
 			<h3 className="md:text-5xl text-3xl mb-5 animate__animated text-black dark:text-white"  ref={section2Ref}>2 years of app <div
 				className="bg-gradient-to-r from-indigo-700 to-red-500 text-transparent bg-clip-text">development</div></h3>

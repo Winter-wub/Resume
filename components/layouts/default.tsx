@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Scrollspy from "react-scrollspy";
 import Head from "next/head";
 import useDarkMode from "../../hooks/darkMode";
+import Link from "next/link";
 
 
 const navigations = [{
@@ -26,12 +27,12 @@ const DefaultLayout: React.FC = ({ children }) => {
 	const [colorTheme, setTheme] = useDarkMode();
 
 	const togglerTheme = (
-		<div className="mr-auto ml-5 flex items-center justify-center">
+		<div className="mr-auto md:ml-5 flex items-center justify-center">
 			{colorTheme === "light" ? (
 				<svg
 					onClick={() => setTheme("light")}
 					xmlns="http://www.w3.org/2000/svg"
-					className="h-6 w-6 text-white"
+					className="h-6 w-6 text-white cursor-pointer"
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke="currentColor"
@@ -47,7 +48,7 @@ const DefaultLayout: React.FC = ({ children }) => {
 				<svg
 					onClick={() => setTheme("dark")}
 					xmlns="http://www.w3.org/2000/svg"
-					className="h-6 w-6 text-black"
+					className="h-6 w-6 text-black cursor-pointer"
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke="currentColor"
@@ -68,15 +69,17 @@ const DefaultLayout: React.FC = ({ children }) => {
 			<Head>
 				<title>Prachayawut Sirisuth</title>
 			</Head>
-			<div className="relative">
-				<div className="z-40 fixed top-0 w-full">
-					<div className="flex bg-white dark:bg-black shadow-xl">
-						<div className="font-bold text-2xl p-5 uppercase text-black dark:text-white">
-							{manifest.brand}
-						</div>
+			<div className="relative bg-gray-50 dark:bg-black">
+				<div className="z-40 fixed top-0 w-full ">
+					<div className="flex bg-gray-50 dark:bg-black  shadow-xl">
+						<Link href="/">
+							<a className="font-bold md:text-2xl p-5 uppercase text-black dark:text-white">
+								{manifest.brand}
+							</a>
+						</Link>
 						{togglerTheme}
 						<Scrollspy items={["home", "projects", "whyme", "contact"]}
-						           className="items-center justify-center hidden md:flex bg-white dark:bg-black"
+						           className="items-center justify-center hidden md:flex bg-gray-50 dark:bg-black"
 						           currentClassName="text-indigo-800 border-t-4 border-indigo-800">
 							{
 								navigations.map(navigation => (
@@ -90,7 +93,8 @@ const DefaultLayout: React.FC = ({ children }) => {
 							}
 						</Scrollspy>
 						<div className="flex md:hidden items-center mr-2">
-							<button className="rounded border p-2 dark:text-white text-black" onClick={() => setToggleCollapse(!toggleCollapse)}>
+							<button className="rounded border p-2 dark:text-white text-black"
+							        onClick={() => setToggleCollapse(!toggleCollapse)}>
 								<BsList />
 							</button>
 						</div>
@@ -108,7 +112,7 @@ const DefaultLayout: React.FC = ({ children }) => {
 						)
 					}
 				</div>
-				<div className="md:mt-5 mt-20">
+				<div className="md:mt-5 mt-20 bg-gray-50 dark:bg-black">
 					{children}
 				</div>
 			</div>

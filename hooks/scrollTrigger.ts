@@ -1,7 +1,7 @@
-import React, { useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 
 export const useScrollTriggerClassName = (ref: React.RefObject<any>, cssClassNames: string| string[] = []): void => {
-	useLayoutEffect(() => {
+	useEffect(() => {
 		const elementPosition = ref?.current.getBoundingClientRect().top ?? 0
 
 		const trackingScroll = () => {

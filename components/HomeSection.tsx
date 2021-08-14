@@ -1,14 +1,14 @@
 import Image from "next/image";
 import meImage from "../public/images/me.png";
-import { VFC } from "react";
+import { VFC, Fragment } from "react";
 import { chunk } from "lodash";
 import manifest from "../pages/manifest.json";
 
 export const HomeSection: VFC = () => {
 	return (
 		<>
-		<section id="home" className="flex w-full container mx-auto md:p-20 bg-white dark:bg-black">
-			<div className="w-full p-10 bg-black md:bg-white md:dark:bg-black md:w-auto">
+		<section id="home" className="flex w-full container mx-auto md:p-20 bg-gray-50 dark:bg-black">
+			<div className="w-full p-10 bg-black md:bg-gray-50 md:dark:bg-black md:w-auto">
 				<div className="font-extrabold md:text-5xl text-3xl mb-10 text-white md:text-black md:dark:text-white animate__animated animate__jackInTheBox" >
 						<span className="bg-gradient-to-r from-indigo-400 to-indigo-700 text-transparent bg-clip-text">
 							Turn</span> your <span
@@ -18,11 +18,11 @@ export const HomeSection: VFC = () => {
 				<div className="text-gray-500 mb-10">
 					From bainstroming to launch, i will help you build a beautiful, inntuitive app that will wow your customers
 				</div>
-				<a className="rounded-xl text-white bg-indigo-600 p-3 shadow uppercase" href="#contact">
+				<a className="rounded-xl text-white bg-indigo-600 p-3 shadow uppercase hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110 transition duration-500 ease-in-out" href="#contact">
 					Request a quote
 				</a>
 			</div>
-			<div className="w-0 md:w-1/2 lg:w-1/3 flex items-center justify-center">
+			<div className="w-0 md:w-1/2 lg:w-1/3 flex items-center justify-center animate__animated animate__backInRight animate__delay-1s">
 				<Image src={meImage} className="h-full w-full bg-gradient-to-bl from-indigo-700 to-red-200 rounded-3xl" alt="PrachayawutSirisuth"   />
 			</div>
 		</section>
@@ -33,7 +33,7 @@ export const HomeSection: VFC = () => {
 						className="border-2-2 border-opacity-20 border-blue-500 h-full border right-1/2 hidden md:block absolute" />
 					{
 						chunk(manifest.timelines, 1).map((items, level) => (
-							<>
+							<Fragment key={level}>
 								{
 									items.map((item, id) => (
 										<div
@@ -58,7 +58,7 @@ export const HomeSection: VFC = () => {
 										</div>
 									))
 								}
-							</>
+							</Fragment>
 						))
 					}
 				</div>

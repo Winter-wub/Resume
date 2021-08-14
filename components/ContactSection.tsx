@@ -4,7 +4,7 @@ import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const ContactSection: VFC = () => {
 	return (
-		<section id="contact" className="bg-white dark:bg-black text-black p-1">
+		<section id="contact" className="bg-gray-50 dark:bg-black text-black p-1">
 			<div className="container mx-auto md:p-20">
 				<h2 className="text-center uppercase font-bold mb-20 text-sm my-8 text-black dark:text-white">Let&apos;s make something awesome
 					together</h2>
