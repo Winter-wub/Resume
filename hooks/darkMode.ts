@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 
-enum Theme {
-	dark ='dark',
-	light = 'light'
-}
-const useDarkMode = (): [string, (value: Theme) => void] => {
+const useDarkMode = (): [string, (value: string) => void] => {
 	const [theme, setTheme] = useState(
 		typeof window !== "undefined" ? localStorage.theme : "dark"
 	);
