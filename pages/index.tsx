@@ -9,7 +9,7 @@ const Index = () => {
 
 	return (
 		<DefaultLayout>
-		<HomeSection/>
+			<HomeSection />
 			<ProjectSection />
 			<WhymeSection />
 			<ContactSection />

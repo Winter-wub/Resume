@@ -7,9 +7,9 @@ import manifest from "../pages/manifest.json";
 export const HomeSection: VFC = () => {
 	return (
 		<>
-		<section id="home" className="flex w-full container mx-auto md:p-20">
-			<div className="w-full p-10 bg-black md:bg-white md:w-auto">
-				<div className="font-extrabold md:text-5xl text-3xl mb-10 text-white md:text-black animate__animated animate__jackInTheBox" >
+		<section id="home" className="flex w-full container mx-auto md:p-20 bg-white dark:bg-black">
+			<div className="w-full p-10 bg-black md:bg-white md:dark:bg-black md:w-auto">
+				<div className="font-extrabold md:text-5xl text-3xl mb-10 text-white md:text-black md:dark:text-white animate__animated animate__jackInTheBox" >
 						<span className="bg-gradient-to-r from-indigo-400 to-indigo-700 text-transparent bg-clip-text">
 							Turn</span> your <span
 					className="text-indigo-600">idea</span> into <span

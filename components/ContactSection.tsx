@@ -4,9 +4,9 @@ import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const ContactSection: VFC = () => {
 	return (
-		<section id="contact" className="bg-white text-black p-1">
+		<section id="contact" className="bg-white dark:bg-black text-black p-1">
 			<div className="container mx-auto md:p-20">
-				<h2 className="text-center uppercase font-bold mb-20 text-sm my-8">Let&apos;s make something awesome
+				<h2 className="text-center uppercase font-bold mb-20 text-sm my-8 text-black dark:text-white">Let&apos;s make something awesome
 					together</h2>
 				<div className="flex flex-col md:flex-row items-center justify-between">
 					<div className="mb-5 rounded-2xl p-10 bg-black text-white shadow-xl">
@@ -25,7 +25,7 @@ export const ContactSection: VFC = () => {
 							project
 						</button>
 					</div>
-					<div className="mb-5 p-10">
+					<div className="mb-5 p-10 text-black dark:text-white">
 						<div className="text-5xl font-bold mb-10">Contacts</div>
 						<div className="flex items-center mb-5">
 							<FiMail className="mr-5" />

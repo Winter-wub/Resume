@@ -5,7 +5,7 @@ export const WhymeSection: VFC = () => {
 		<section id="whyme" className="bg-gray-900 text-white">
 			<div className="container mx-auto pb-36">
 				<h2 className="text-center uppercase font-bold mb-5 text-sm pt-20">Why me</h2>
-				<div className="grid grid-flow-col grid-cols-3 grid-rows-2 gap-4 p-20">
+				<div className="grid grid-flow-col grid-cols-1 grid-rows-6 md:grid-cols-3 md:grid-rows-2 gap-4 p-20">
 					<div>
 						<h4 className="mb-3">Experience</h4>
 						<p className="text-gray-400">
