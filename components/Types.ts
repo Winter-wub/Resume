@@ -1,3 +1,5 @@
+import { IconBaseProps } from "react-icons";
+
 export interface TimelineData {
 	from_month?: number;
 	from_year?: number;
@@ -11,4 +13,8 @@ export interface TimelineData {
 export interface ProptypeTimeline {
 	id: number;
 	item: TimelineData;
+}
+
+export interface ToolLogoMapProp extends IconBaseProps {
+	toolname: string;
 }

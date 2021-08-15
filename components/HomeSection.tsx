@@ -4,14 +4,14 @@ import { VFC } from "react";
 import manifest from "../pages/manifest.json";
 import styles from "../styles/HomeSection.module.scss";
 import cx from "classnames";
-import { ProptypeTimeline } from "@Components/Types";
+import { ProptypeTimeline, ToolLogoMapProp } from "@Components/Types";
 import { FiTool } from "react-icons/fi";
 import { FaNodeJs, FaReact, FaVuejs } from "react-icons/fa";
 import { GrGraphQl, GrOracle } from "react-icons/gr";
 import { DiMongodb } from "react-icons/di";
 import { SiNextDotJs, SiPostgresql } from "react-icons/si";
 
-const ToolLogoMap: VFC<{ toolname: string }> = ({ toolname, ...props }) => {
+const ToolLogoMap: VFC<ToolLogoMapProp> = ({ toolname, ...props }) => {
 	switch (toolname) {
 		case "vuejs":
 			return <FaVuejs {...props} />;
@@ -55,7 +55,6 @@ const TimeLine: VFC<ProptypeTimeline> = ({ id, item }) => {
 				<div className="flex">
 					{
 						item.tools?.map((item) => <div key={item} className="text-white mr-2 text-lg">
-							{/*// @ts-ignore*/}
 							<ToolLogoMap toolname={item} size={25} />
 						</div>)
 					}
