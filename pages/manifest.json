@@ -3,7 +3,7 @@
     {
       "tools": [
         "nodejs",
-        "vue",
+        "vuejs",
         "graphql",
         "mongodb"
       ],
@@ -16,8 +16,8 @@
     },
     {
       "tools": [
-        "Nodejs",
-        "Oracle Database"
+        "nodejs",
+        "oracle_db"
       ],
       "from_year": 2019,
       "from_month": 8,
@@ -38,7 +38,19 @@
       "to_month": 4,
       "company": "Baania",
       "desc": "I developed frontend and api for real estate appraisal system. used React for build frontend and nodejs for build the api. By obtaining real estate data that collect by Krungsri bank"
+    },
+    {
+      "tools": [
+        "nodejs",
+        "nextjs",
+        "postgreSQL"
+      ],
+      "from_year": 2021,
+      "from_month": 5,
+      "company": "SCG Technology",
+      "desc": "I developed and maintain the Project part of SCG Home called My Home. The Project used nextjs for frontend and nodejs used koa for provide api."
     }
+
   ],
   "apps": [
     {
