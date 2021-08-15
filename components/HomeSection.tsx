@@ -11,28 +11,28 @@ import { GrGraphQl, GrOracle } from "react-icons/gr";
 import { DiMongodb } from "react-icons/di";
 import { SiNextDotJs, SiPostgresql } from "react-icons/si";
 
-const ToolLogoMap: VFC<{ toolname:string }> = ({ toolname, ...props }) => {
+const ToolLogoMap: VFC<{ toolname: string }> = ({ toolname, ...props }) => {
 	switch (toolname) {
-		case 'vuejs':
-			return <FaVuejs {...props}/>
-		case 'nodejs':
-			return <FaNodeJs {...props}/>
-		case 'react':
-			return <FaReact {...props}/>
-		case 'graphql':
-			return <GrGraphQl {...props}/>
-		case 'mongodb':
-			return <DiMongodb {...props}/>
-		case 'nextjs':
-			return <SiNextDotJs {...props}/>
-		case 'oracle_db':
-			return <GrOracle {...props}/>
-		case 'postgreSQL':
-			return <SiPostgresql {...props}/>
+		case "vuejs":
+			return <FaVuejs {...props} />;
+		case "nodejs":
+			return <FaNodeJs {...props} />;
+		case "react":
+			return <FaReact {...props} />;
+		case "graphql":
+			return <GrGraphQl {...props} />;
+		case "mongodb":
+			return <DiMongodb {...props} />;
+		case "nextjs":
+			return <SiNextDotJs {...props} />;
+		case "oracle_db":
+			return <GrOracle {...props} />;
+		case "postgreSQL":
+			return <SiPostgresql {...props} />;
 		default:
-			return <FiTool {...props}/>
+			return <FiTool {...props} />;
 	}
-}
+};
 
 const TimeLine: VFC<ProptypeTimeline> = ({ id, item }) => {
 	return (
@@ -42,7 +42,7 @@ const TimeLine: VFC<ProptypeTimeline> = ({ id, item }) => {
 			<div
 				className="z-20 items-center order-1 bg-gray-800 shadow-xl w-40 h-8 rounded-full hidden md:flex">
 				<h1
-					className="mx-auto font-semibold text-lg text-white">{item.from_month}/{item.from_year} - {item.to_month ? `${item.to_month}/${item.to_year}` : 'Current'}</h1>
+					className="mx-auto font-semibold text-lg text-white">{item.from_month}/{item.from_year} - {item.to_month ? `${item.to_month}/${item.to_year}` : "Current"}</h1>
 			</div>
 			<div className="order-1 bg-gray-400 rounded-lg shadow-xl md:w-5/12 px-6 py-4 animate__animated">
 				<h3 className="font-bold text-gray-800 text-xl uppercase mb-3">{item.company}</h3>
@@ -54,13 +54,16 @@ const TimeLine: VFC<ProptypeTimeline> = ({ id, item }) => {
 				</div>
 				<div className="flex">
 					{
-						item.tools?.map((item) => <div key={item} className="text-white mr-2 text-lg"><ToolLogoMap  toolname={item} size={25} /></div> )
+						item.tools?.map((item) => <div key={item} className="text-white mr-2 text-lg">
+							{/*// @ts-ignore*/}
+							<ToolLogoMap toolname={item} size={25} />
+						</div>)
 					}
 				</div>
 			</div>
 		</div>
-	)
-}
+	);
+};
 
 export const HomeSection: VFC = () => {
 	return (
