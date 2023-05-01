@@ -1,9 +1,6 @@
 {
   "name": "resume",
   "main": "server.js",
-  "engines": {
-    "node": "14"
-  },
   "version": "0.1.0",
   "private": true,
   "scripts": {
