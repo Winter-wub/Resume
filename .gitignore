@@ -36,3 +36,11 @@ yarn-error.log*
 .firebase
 .firebaserc
 nextjs/
+
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
