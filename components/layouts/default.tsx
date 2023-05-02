@@ -72,61 +72,61 @@ const DefaultLayout: React.FC = ({ children }) => {
 		</div>
 	);
 
-	return (
-		<>
-			<Head>
-				<title>Prachayawut Sirisuth</title>
-			</Head>
-			<div className="relative bg-gray-50 dark:bg-black">
-				<div className="z-40 fixed top-0 w-full ">
-					<div className="flex bg-gray-50 dark:bg-black  shadow-xl">
-						<div className="flex md:hidden items-center ml-2">
-							<button className="rounded border p-2 dark:text-white text-black"
-							        onClick={() => setToggleCollapse(!toggleCollapse)}>
-								<BsList />
-							</button>
-						</div>
-						<Link href="/">
-							<a className="font-bold md:text-2xl p-5 uppercase text-black dark:text-white mr-auto">
-								{manifest.brand}
-							</a>
-						</Link>
-						<Scrollspy items={["home", "projects", "whyme", "contact"]}
-						           className="items-center justify-center hidden md:flex bg-gray-50 dark:bg-black"
-						           currentClassName="text-indigo-800 border-t-4 border-indigo-800">
-							{
-								navigations.map(navigation => (
-									<a key={navigation.section} className="h-full flex items-center mr-4 text-black dark:text-white"
-									   href={`#${navigation.section}`}>
-										<div className="font-bold uppercase">
-											{navigation.title}
-										</div>
-									</a>
-								))
-							}
-						</Scrollspy>
+	return <>
+        <Head>
+            <title>Prachayawut Sirisuth</title>
+        </Head>
+        <div className="relative bg-gray-50 dark:bg-black">
+            <div className="z-40 fixed top-0 w-full ">
+                <div className="flex bg-gray-50 dark:bg-black  shadow-xl">
+                    <div className="flex md:hidden items-center ml-2">
+                        <button className="rounded border p-2 dark:text-white text-black"
+                                onClick={() => setToggleCollapse(!toggleCollapse)}>
+                            <BsList />
+                        </button>
+                    </div>
+                    <Link
+                        href="/"
+                        className="font-bold md:text-2xl p-5 uppercase text-black dark:text-white mr-auto">
 
-						{togglerTheme}
-					</div>
-					{
-						toggleCollapse && (
-							<div
-								className="p-5 bg-black flex flex-col shadow border-2 border-white rounded animate__animated animate__fadeInDown z-10">
-								{
-									navigations.map(item => (
-										<a key={item.title} className="text-white uppercase p-1" href={`#${item.section}`}>{item.title}</a>
-									))
-								}
-							</div>
-						)
-					}
-				</div>
-				<div className="md:mt-5 mt-20 bg-gray-50 dark:bg-black">
-					{children}
-				</div>
-			</div>
-		</>
-	);
+                        {manifest.brand}
+
+                    </Link>
+                    <Scrollspy items={["home", "projects", "whyme", "contact"]}
+                               className="items-center justify-center hidden md:flex bg-gray-50 dark:bg-black"
+                               currentClassName="text-indigo-800 border-t-4 border-indigo-800">
+                        {
+                            navigations.map(navigation => (
+                                <a key={navigation.section} className="h-full flex items-center mr-4 text-black dark:text-white"
+                                   href={`#${navigation.section}`}>
+                                    <div className="font-bold uppercase">
+                                        {navigation.title}
+                                    </div>
+                                </a>
+                            ))
+                        }
+                    </Scrollspy>
+
+                    {togglerTheme}
+                </div>
+                {
+                    toggleCollapse && (
+                        <div
+                            className="p-5 bg-black flex flex-col shadow border-2 border-white rounded animate__animated animate__fadeInDown z-10">
+                            {
+                                navigations.map(item => (
+                                    <a key={item.title} className="text-white uppercase p-1" href={`#${item.section}`}>{item.title}</a>
+                                ))
+                            }
+                        </div>
+                    )
+                }
+            </div>
+            <div className="md:mt-5 mt-20 bg-gray-50 dark:bg-black">
+                {children}
+            </div>
+        </div>
+    </>;
 };
 
 export default DefaultLayout;

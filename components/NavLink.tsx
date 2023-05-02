@@ -21,13 +21,13 @@ const NavLink: React.FC<LinkProps & Props> = ({ children, activeClassName, ...pr
 			: childClassName;
 
 	return (
-		<Link {...props}>
+        <Link {...props} legacyBehavior>
 			{	// @ts-ignore
 				React.cloneElement(child, {
 					className: className || null
 				})}
 		</Link>
-	);
+    );
 };
 
 export default NavLink;
